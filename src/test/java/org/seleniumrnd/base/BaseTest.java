@@ -2,11 +2,15 @@ package org.seleniumrnd.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.seleniumrnd.testnglisteners.FrameworkTestListener;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.annotations.Listeners;
 
+
+@Listeners(FrameworkTestListener.class)
 public class BaseTest {
 	
 	public WebDriver driver=null;
