@@ -7,10 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.seleniumrnd.base.BaseTest;
+import org.testng.annotations.Test;
 
-public class AutoSuggestDropDown {
+public class AutoSuggestDropDown extends BaseTest {
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public static void testAutoSuggestDropDown() throws InterruptedException {
 		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();

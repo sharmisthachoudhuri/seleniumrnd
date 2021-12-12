@@ -1,0 +1,7 @@
+Features To Add
+TestNG Listeners
+Extent Report
+AllureReport
+Excel and CSV Read
+
+https://www.seleniumeasy.com/selenium-tutorials/extent-reports-using-testng-listeners
