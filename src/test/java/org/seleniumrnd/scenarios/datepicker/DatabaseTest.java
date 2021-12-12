@@ -1,11 +1,8 @@
 package org.seleniumrnd.scenarios.datepicker;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +24,7 @@ class DatabaseTest {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://localhost/opencart/upload/");
 		driver.manage().window().maximize();
 

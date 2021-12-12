@@ -23,11 +23,12 @@ public class ExplicitWait {
 						
 		driver.findElement(By.name("q")).sendKeys("Selenium");
 		driver.findElement(By.name("q")).sendKeys(Keys.RETURN);
-		
+		/*
 		WebDriverWait mywait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		WebElement ele=mywait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[text()='Selenium WebDriver']")));
 		//WebElement ele=mywait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[text()='Selenium WebDriver']")));
 		ele.click();
+		 */
 		driver.quit();
 		
 	}

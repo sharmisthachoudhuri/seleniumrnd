@@ -20,7 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class DownloadPDFFile {
 
 	public static void main(String[] args) throws InterruptedException {
-	
+	/*
 		String location=System.getProperty("user.dir")+"\\Downloads\\";
 
 		//Chrome
@@ -67,6 +67,8 @@ public class DownloadPDFFile {
 		driver.manage().window().maximize();
 		driver.get("https://file-examples.com/index.php/sample-documents-download/sample-pdf-download/"); 
 		driver.findElement(By.xpath("//tbody/tr[1]/td[5]/a[1]")).click();
+
+	 */
 	}
 	
 }

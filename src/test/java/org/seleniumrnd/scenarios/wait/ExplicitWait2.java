@@ -24,18 +24,18 @@ public class ExplicitWait2 {
 	
 		By eleLocator=By.xpath("//h3[text()='Selenium WebDriver']");
 		
-		waitForElementPresent(driver, eleLocator,10).click();
+	//	waitForElementPresent(driver, eleLocator,10).click();
 		
 		driver.quit();
 		
 	}
-	
+	/*
 	public static WebElement waitForElementPresent(WebDriver driver, By locator, int timeout){
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		
 		return driver.findElement(locator);
 	}
-	
+	*/
 
 }

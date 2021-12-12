@@ -6,16 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.seleniumrnd.base.BaseTest;
+import org.testng.annotations.Test;
 
 
-public class ActionVsActions {
+public class ActionVsActions extends BaseTest {
 
-	public static void main(String args[])throws InterruptedException {
+	@Test
+	public void testActions()throws InterruptedException {
 
-		//Chrome --> Not working(Not Opening Browse window)
-		System.setProperty("webdriver.chrome.driver", "C://Drivers//chromedriver_win32/chromedriver.exe");
-		WebDriver driver = new ChromeDriver(); 
-				
 		// Navigate to site
 		driver.get("http://automationpractice.com/index.php");
 		WebElement features = driver.findElement(By.xpath("//a[@title='Women']"));
