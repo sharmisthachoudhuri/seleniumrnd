@@ -53,7 +53,7 @@ public class TestNGLogin extends BaseTest{
 	}
 	@Test(priority = 2, description = "Logout Test")
 	public  void testLogout() {
-		 WebElement logoutLink = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+		 WebElement logoutLink = driver.findElement(By.xpath("//a[contains(text(),'Logout123')]"));
 		  logoutLink.click();
 	}
 
