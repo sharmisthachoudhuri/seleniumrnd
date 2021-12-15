@@ -5,3 +5,5 @@ AllureReport
 Excel and CSV Read
 
 https://www.seleniumeasy.com/selenium-tutorials/extent-reports-using-testng-listeners
+https://eng.fareye.co/extent-report-integration-using-testng-listeners/
+https://www.seleniumeasy.com/testng-tutorials/how-to-take-screenshot-for-only-failed-tests-using-webdriver
