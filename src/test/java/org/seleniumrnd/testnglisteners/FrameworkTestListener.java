@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.seleniumrnd.base.BaseTest;
 import org.seleniumrnd.extentreport.ExtentManager;
 import org.seleniumrnd.extentreport.ExtentTestManager;
 import org.testng.ITestContext;
@@ -65,11 +66,11 @@ public class FrameworkTestListener implements ITestListener {
 
     @Override
     public synchronized void onTestFailure(ITestResult result) {
-        ITestContext context = result.getTestContext();
-        WebDriver driver = (WebDriver)context.getAttribute("driver");
-        addExtentLabelToTest(result);
-
-
+        BaseTest test = (BaseTest) result.getInstance();
+        if (test == null) {
+            return;
+        }
+        WebDriver driver = test.driver;
 
         ExtentTestManager.getTest().assignCategory(getSimpleClassName(result));
         ExtentTestManager.getTest().log(Status.FAIL, result.getName() + " Test is failed" +result.getThrowable());
