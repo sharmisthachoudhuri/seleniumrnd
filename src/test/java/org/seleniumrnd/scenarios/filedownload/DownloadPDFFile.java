@@ -16,10 +16,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.seleniumrnd.base.BaseTest;
+import org.testng.annotations.Test;
 
-public class DownloadPDFFile {
-
-	public static void main(String[] args) throws InterruptedException {
+public class DownloadPDFFile extends BaseTest {
+	@Test
+	public  void testFileDownload() throws InterruptedException {
 	/*
 		String location=System.getProperty("user.dir")+"\\Downloads\\";
 
