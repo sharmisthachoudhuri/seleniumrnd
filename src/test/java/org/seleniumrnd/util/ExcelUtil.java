@@ -71,4 +71,11 @@ public class ExcelUtil {
         }
         return dataMap;
     }
-}
+
+    public static Object[][] getExcelDataMapAsPartOf2DArray(String fileName, String sheetName){
+        Object[][] objData = new Object[1][1];
+        objData[0][0]= getExcelDataMap(fileName,sheetName);
+        return objData;
+    }
+
+    }

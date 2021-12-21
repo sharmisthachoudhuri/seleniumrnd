@@ -1,27 +1,24 @@
 package org.seleniumrnd.nop;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.seleniumrnd.base.BaseTest;
-import org.seleniumrnd.testnglisteners.FrameworkTestListener;
+import org.seleniumrnd.util.ExcelUtil;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-import com.google.common.base.Verify;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.util.Map;
 
 
 public class TestNGLogin extends BaseTest{
 
-	@Test(priority = 1,description = "Login Test")
-	public  void testLogin() throws InterruptedException {
+	@Test(priority = 1,description = "Login Test",dataProvider = "Map Data Test")
+	//public  void testLogin() throws InterruptedException {
+	public  void testLogin(Map<String,String> paramMap) throws InterruptedException {
+		System.out.println("paramMap:"+paramMap);
 		driver.get("https://admin-demo.nopcommerce.com/");
-		
-		
 		
 		WebElement email= driver.findElement(By.id("Email"));
 		email.clear();
@@ -51,10 +48,21 @@ public class TestNGLogin extends BaseTest{
 		
 
 	}
+	@Ignore
 	@Test(priority = 2, description = "Logout Test")
 	public  void testLogout() {
 		 WebElement logoutLink = driver.findElement(By.xpath("//a[contains(text(),'Logout123')]"));
 		  logoutLink.click();
+	}
+
+	@DataProvider(name = "Map Data Test")
+	public Object[][] readMapDataFromExcel() throws Exception {
+		String filePath ="C://All_Projects//test_data.xlsx";
+		//System.out.println(getExcelDataArray(filePath,"login"));
+		Map<String, String> dataMap =ExcelUtil.getExcelDataMap(filePath,"login");
+		Object[][] objData = new Object[1][1];
+		objData[0][0]= dataMap;
+		return objData;
 	}
 
 }
